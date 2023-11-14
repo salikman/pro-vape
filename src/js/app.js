@@ -3,6 +3,7 @@ import * as lazyLoad from "./modules/lazyload.js";
 
 flsFunctions.isWebp();
 lazyLoad.lazyLoad();
+AOS.init();
 
 $('.header__phone').on('click', function() {
     $('.header').toggleClass('open-info');
@@ -28,10 +29,71 @@ $(".main-nav a[href^='#']").on('click', function(e) {
     }, 600);
 });
 
-///////////////////////////
-// On Scroll
-$(window).on('scroll', function() {
-    var wScroll = $(this).scrollTop();
+document.addEventListener('wheel', function(event) {
+    event.preventDefault();
+    var delta = event.deltaY; // отримання напрямку прокрутки
+    var $sections = document.querySelectorAll('[id]'); // знаходження всіх елементів з id
+    var currentScrollPosition = window.pageYOffset;
 
-    wScroll > 1 ? $('.header').addClass('fixed-nav') : $('.header').removeClass('fixed-nav');
+    var $nearestSection = null;
+    var nearestDistance = Number.MAX_SAFE_INTEGER;
+
+    $sections.forEach(function(section) {
+        var sectionOffset = section.offsetTop;
+        var distance = Math.abs(sectionOffset - currentScrollPosition);
+
+        if ((delta < 0 && sectionOffset < currentScrollPosition) || (delta > 0 && sectionOffset > currentScrollPosition)) {
+            if (distance < nearestDistance) {
+                nearestDistance = distance;
+                $nearestSection = section;
+            }
+        }
+    });
+
+    if ($nearestSection !== null) {
+        window.scrollTo({
+            top: $nearestSection.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+}, { passive: false });
+
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    const boxes = document.querySelectorAll('.box');
+    const minDistance = 100; // Мінімальна відстань між елементами
+
+    function getRandomPosition() {
+        const randomX = Math.random() * window.innerWidth;
+        const randomY = Math.random() * window.innerHeight;
+        return { x: randomX, y: randomY };
+    }
+
+    function isOverlap(pos1, pos2) {
+        const dx = pos1.x - pos2.x;
+        const dy = pos1.y - pos2.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        return distance < minDistance;
+    }
+
+    function repositionBoxes() {
+        const positions = new Map();
+        boxes.forEach(box => {
+            let newPos = getRandomPosition();
+            while (Array.from(positions.values()).some(pos => isOverlap(pos, newPos))) {
+                newPos = getRandomPosition();
+            }
+            positions.set(box, newPos);
+        });
+
+        positions.forEach((pos, box) => {
+            const randomRotation = Math.random() * 360; // Випадкове значення обертання
+            box.style.transform = `translate(${pos.x}px, ${pos.y}px) rotate(${randomRotation}deg)`;
+        });
+    }
+
+    repositionBoxes();
 });
+
+
+
