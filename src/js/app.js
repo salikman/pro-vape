@@ -18,24 +18,30 @@ $('.header__collapse').on('click', function() {
     $('body').toggleClass('open-menu');
 });
 
-///////////////////////////
-// Smooth scroll
-$(".main-nav a[href^='#']").on('click', function(e) {
-    e.preventDefault();
-    var hash = this.hash;
-    $('html, body').animate({
-        scrollTop: $(this.hash).offset().top - 105
-    }, 600);
-});
-
 AOS.init();
+$(document).ready(function() {
+    // Перевірка при ресайзі вікна
+    $(window).resize(function() {
+        if ($(window).width() <= 991) {
+            AOS.init({
+                disable: true // Вимкнення AOS
+            });
+        } else {
+            AOS.init({
+                disable: false // Увімкнення AOS
+            });
+        }
+    });
+});
 $('[data-aos]').each(function(){ $(this).addClass("aos-init"); });
 
 $('#fullpage').fullpage({
+    licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
     autoScrolling:true,
     scrollHorizontally: true,
     responsiveWidth: 991,
-    // anchors: ['slide1', 'slide2', 'slide3','slide4','slide5','slide6','slide7','slide8','slide9','slide10','slide11','slide12','slide13','slide14'],
+    menu: '#menu',
+    anchors: ['page1', 'page2', 'page3','page4','page5','page6','page7','page8','page9','page10','page11','page12','page13','page14'],
     // sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
     navigation: true,
     navigationPosition: 'right',
@@ -59,41 +65,48 @@ $('#fullpage').fullpage({
         $('.section.active [data-aos]').each(function(){
             $(this).addClass("aos-animate")
         });
-    }
+    },
 });
 
-// if (window.innerWidth > 991) {
-//     document.addEventListener('wheel', function(event) {
-//         event.preventDefault();
-//         var delta = event.deltaY; // отримання напрямку прокрутки
-//         var $sections = document.querySelectorAll('[id]'); // знаходження всіх елементів з id
-//         var currentScrollPosition = window.pageYOffset;
-//
-//         var $nearestSection = null;
-//         var nearestDistance = Number.MAX_SAFE_INTEGER;
-//
-//         $sections.forEach(function(section) {
-//             var sectionOffset = section.offsetTop;
-//             var distance = Math.abs(sectionOffset - currentScrollPosition);
-//
-//             if ((delta < 0 && sectionOffset < currentScrollPosition) || (delta > 0 && sectionOffset > currentScrollPosition)) {
-//                 if (distance < nearestDistance) {
-//                     nearestDistance = distance;
-//                     $nearestSection = section;
-//                 }
-//             }
-//         });
-//
-//         if ($nearestSection !== null) {
-//             window.scrollTo({
-//                 top: $nearestSection.offsetTop,
-//                 behavior: 'smooth'
-//             });
-//         }
-//     }, { passive: false });
-// }
-//
-//
+if (window.innerWidth < 992) {
+    $("#menu a[href^='#']").on('click', function(e) {
+        e.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(this.hash).offset().top - 105
+        }, 600);
+    });
+    // document.addEventListener('wheel', function(event) {
+    //     event.preventDefault();
+    //     var delta = event.deltaY; // отримання напрямку прокрутки
+    //     var $sections = document.querySelectorAll('[id]'); // знаходження всіх елементів з id
+    //     var currentScrollPosition = window.pageYOffset;
+    //
+    //     var $nearestSection = null;
+    //     var nearestDistance = Number.MAX_SAFE_INTEGER;
+    //
+    //     $sections.forEach(function(section) {
+    //         var sectionOffset = section.offsetTop;
+    //         var distance = Math.abs(sectionOffset - currentScrollPosition);
+    //
+    //         if ((delta < 0 && sectionOffset < currentScrollPosition) || (delta > 0 && sectionOffset > currentScrollPosition)) {
+    //             if (distance < nearestDistance) {
+    //                 nearestDistance = distance;
+    //                 $nearestSection = section;
+    //             }
+    //         }
+    //     });
+    //
+    //     if ($nearestSection !== null) {
+    //         window.scrollTo({
+    //             top: $nearestSection.offsetTop,
+    //             behavior: 'smooth'
+    //         });
+    //     }
+    // }, { passive: false });
+}
+
+
 window.addEventListener('DOMContentLoaded', (event) => {
     const boxes = document.querySelectorAll('.box');
     const minDistance = 100; // Мінімальна відстань між елементами

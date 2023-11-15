@@ -85,9 +85,9 @@ body.open-menu {
     gap: 30px;
     cursor: pointer;
 
-    @media (min-width: 992px) {
-      display: none;
-    }
+    //@media (min-width: 992px) {
+    //  display: none;
+    //}
 
     span {
       position: relative;
@@ -186,6 +186,16 @@ body.open-menu {
   }
 }
 
+@media (min-width: 992px) {
+  #mob-menu {
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  #menu {
+    display: none;
+  }
+}
 .main-nav {
   position: fixed;
   width: 250px;
