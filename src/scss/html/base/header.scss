@@ -78,16 +78,14 @@ body.open-menu {
 
   &__collapse {
     position: relative;
-    z-index: 90;
+    z-index: 91;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
+    width: max-content;
+    height: 33px;
     cursor: pointer;
-
-    //@media (min-width: 992px) {
-    //  display: none;
-    //}
 
     span {
       position: relative;
