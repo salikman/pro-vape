@@ -85,6 +85,10 @@ body.open-menu {
     gap: 30px;
     cursor: pointer;
 
+    @media (min-width: 992px) {
+      display: none;
+    }
+
     span {
       position: relative;
       width: 40px;

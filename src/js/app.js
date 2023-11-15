@@ -28,44 +28,72 @@ $(".main-nav a[href^='#']").on('click', function(e) {
     }, 600);
 });
 
-// $('#fullpage').fullpage({
-//     // autoScrolling:true,
-//     // scrollHorizontally: true,
-//     responsiveWidth: 991
-// });
+AOS.init();
+$('[data-aos]').each(function(){ $(this).addClass("aos-init"); });
 
-if (window.innerWidth > 991) {
-    document.addEventListener('wheel', function(event) {
-        event.preventDefault();
-        var delta = event.deltaY; // отримання напрямку прокрутки
-        var $sections = document.querySelectorAll('[id]'); // знаходження всіх елементів з id
-        var currentScrollPosition = window.pageYOffset;
-
-        var $nearestSection = null;
-        var nearestDistance = Number.MAX_SAFE_INTEGER;
-
-        $sections.forEach(function(section) {
-            var sectionOffset = section.offsetTop;
-            var distance = Math.abs(sectionOffset - currentScrollPosition);
-
-            if ((delta < 0 && sectionOffset < currentScrollPosition) || (delta > 0 && sectionOffset > currentScrollPosition)) {
-                if (distance < nearestDistance) {
-                    nearestDistance = distance;
-                    $nearestSection = section;
-                }
-            }
+$('#fullpage').fullpage({
+    autoScrolling:true,
+    scrollHorizontally: true,
+    responsiveWidth: 991,
+    // anchors: ['slide1', 'slide2', 'slide3','slide4','slide5','slide6','slide7','slide8','slide9','slide10','slide11','slide12','slide13','slide14'],
+    // sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+    navigation: true,
+    navigationPosition: 'right',
+    navigationTooltips: ['1 page', '2 page', '3 page','4 page','5 page','6 page','7 page','8 page','9 page','10 page','11 page','12 page','13 page','14 page'],
+    onLeave: function(){
+        $('.section [data-aos]').each(function(){
+            $(this).removeClass("aos-animate")
         });
+    },
+    onSlideLeave: function(){
+        $('.slide [data-aos]').each(function(){
+            $(this).removeClass("aos-animate")
+        });
+    },
+    afterSlideLoad: function(){
+        $('.slide.active [data-aos]').each(function(){
+            $(this).addClass("aos-animate")
+        });
+    },
+    afterLoad: function(){
+        $('.section.active [data-aos]').each(function(){
+            $(this).addClass("aos-animate")
+        });
+    }
+});
 
-        if ($nearestSection !== null) {
-            window.scrollTo({
-                top: $nearestSection.offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    }, { passive: false });
-}
-
-
+// if (window.innerWidth > 991) {
+//     document.addEventListener('wheel', function(event) {
+//         event.preventDefault();
+//         var delta = event.deltaY; // отримання напрямку прокрутки
+//         var $sections = document.querySelectorAll('[id]'); // знаходження всіх елементів з id
+//         var currentScrollPosition = window.pageYOffset;
+//
+//         var $nearestSection = null;
+//         var nearestDistance = Number.MAX_SAFE_INTEGER;
+//
+//         $sections.forEach(function(section) {
+//             var sectionOffset = section.offsetTop;
+//             var distance = Math.abs(sectionOffset - currentScrollPosition);
+//
+//             if ((delta < 0 && sectionOffset < currentScrollPosition) || (delta > 0 && sectionOffset > currentScrollPosition)) {
+//                 if (distance < nearestDistance) {
+//                     nearestDistance = distance;
+//                     $nearestSection = section;
+//                 }
+//             }
+//         });
+//
+//         if ($nearestSection !== null) {
+//             window.scrollTo({
+//                 top: $nearestSection.offsetTop,
+//                 behavior: 'smooth'
+//             });
+//         }
+//     }, { passive: false });
+// }
+//
+//
 window.addEventListener('DOMContentLoaded', (event) => {
     const boxes = document.querySelectorAll('.box');
     const minDistance = 100; // Мінімальна відстань між елементами
