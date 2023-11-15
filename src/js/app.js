@@ -4,21 +4,18 @@ import * as lazyLoad from "./modules/lazyload.js";
 flsFunctions.isWebp();
 lazyLoad.lazyLoad();
 
-$('.header__phone').on('click', function() {
-    $('.header').toggleClass('open-info');
-
-    $('.header__info svg').on('click', function() {
-        $('.header').removeClass('open-info');
-    });
-});
-
 $('.header__collapse').on('click', function() {
     var wScroll = $(this).scrollTop();
 
     $('body').toggleClass('open-menu');
 });
+$(window).on('scroll', function() {
+    var wScroll = $(this).scrollTop();
 
-AOS.init();
+    // Fixed nav
+    wScroll > 1 ? $('.header').addClass('fixed-nav') : $('.header').removeClass('fixed-nav');
+});
+
 $(document).ready(function() {
     // Перевірка при ресайзі вікна
     $(window).resize(function() {
@@ -33,6 +30,8 @@ $(document).ready(function() {
         }
     });
 });
+
+AOS.init();
 $('[data-aos]').each(function(){ $(this).addClass("aos-init"); });
 
 $('#fullpage').fullpage({
@@ -41,11 +40,11 @@ $('#fullpage').fullpage({
     scrollHorizontally: true,
     responsiveWidth: 991,
     menu: '#menu',
-    anchors: ['page1', 'page2', 'page3','page4','page5','page6','page7','page8','page9','page10','page11','page12','page13','page14'],
+    anchors: ['page1', 'page2', 'page3','page4','page5','page6','page7','page8','page9','page10','page11','page12','page13','page15','page16','page14'],
     // sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
     navigation: true,
     navigationPosition: 'right',
-    navigationTooltips: ['1 page', '2 page', '3 page','4 page','5 page','6 page','7 page','8 page','9 page','10 page','11 page','12 page','13 page','14 page'],
+    navigationTooltips: ['1 page', '2 page', '3 page','4 page','5 page','6 page','7 page','8 page','9 page','10 page','11 page','12 page','13 page','14 page','15 page','16 page'],
     onLeave: function(){
         $('.section [data-aos]').each(function(){
             $(this).removeClass("aos-animate")
@@ -69,41 +68,21 @@ $('#fullpage').fullpage({
 });
 
 if (window.innerWidth < 992) {
-    $("#menu a[href^='#']").on('click', function(e) {
+    $(".header__menu-mob a[href^='#']").on('click', function(e) {
         e.preventDefault();
-        var hash = this.hash;
-        $('html, body').animate({
-            scrollTop: $(this.hash).offset().top - 105
-        }, 600);
+        var targetElement = $(this.hash);
+        if (targetElement.length) {
+            $('html, body').animate({
+                scrollTop: targetElement.offset().top - 105
+            }, 600);
+        }
+
     });
-    // document.addEventListener('wheel', function(event) {
-    //     event.preventDefault();
-    //     var delta = event.deltaY; // отримання напрямку прокрутки
-    //     var $sections = document.querySelectorAll('[id]'); // знаходження всіх елементів з id
-    //     var currentScrollPosition = window.pageYOffset;
-    //
-    //     var $nearestSection = null;
-    //     var nearestDistance = Number.MAX_SAFE_INTEGER;
-    //
-    //     $sections.forEach(function(section) {
-    //         var sectionOffset = section.offsetTop;
-    //         var distance = Math.abs(sectionOffset - currentScrollPosition);
-    //
-    //         if ((delta < 0 && sectionOffset < currentScrollPosition) || (delta > 0 && sectionOffset > currentScrollPosition)) {
-    //             if (distance < nearestDistance) {
-    //                 nearestDistance = distance;
-    //                 $nearestSection = section;
-    //             }
-    //         }
-    //     });
-    //
-    //     if ($nearestSection !== null) {
-    //         window.scrollTo({
-    //             top: $nearestSection.offsetTop,
-    //             behavior: 'smooth'
-    //         });
-    //     }
-    // }, { passive: false });
+
+    $('.has-dropdown a').on('click', function() {
+        // e.preventDefault();
+        $(this).parent().toggleClass('open-drop');
+    });
 }
 
 

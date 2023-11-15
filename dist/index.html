@@ -4,66 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.css" integrity="sha512-zDKgq9gDZL1N3buxzFPZjHwqDOFsgTyhR0aJtXLFTIjEFovumXMaVeF6iBUZ/Rc4Mb0IqRrhqAY+RY7OCUBo6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css?_v=20231115211500" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.css?_v=20231115211500" integrity="sha512-zDKgq9gDZL1N3buxzFPZjHwqDOFsgTyhR0aJtXLFTIjEFovumXMaVeF6iBUZ/Rc4Mb0IqRrhqAY+RY7OCUBo6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.min.css?_v=20231115211500">
     <title>Главная</title>
 </head>
 
 <body>
     <header class="header">
     <div class="header__container">
-        <div class="header__collapse">
-            <span></span>
-            <p>menu</p>
-        </div>
-        <div class="header__phone"><span>Kontaktujte nás</span> <svg><use href="img/icons/icons.svg#phone"></use></svg></div>
-
-        <div class="header__info">
-            <svg><use href="img/icons/icons.svg#close"></use></svg>
-            <img src="img/img-1.png" alt="">
-            <ul>
-                <li>Pro Vape Ltd</li>
-                <li>Riga, LV-1005, Lotyšsko</li>
-                <li>Telefon: <a href="tel:+371 26 42 42 43">+371 26 42 42 43</a></li>
-                <li>Email: <a href="mailto:info@pro-vape.eu">info@pro-vape.eu</a></li>
+        <div class="header__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt=""></picture></div>
+        <div class="header__menu">
+            <ul id="menu">
+                <li class="has-dropdown">
+                    <a href="#"><span>Produkty</span><svg><use href="img/icons/icons.svg#chevron-down"></use></svg></a>
+                    <ul class="dropdown">
+                        <li data-menuanchor="page2"><a href="#page2"><span>Salt Cristallite</span><picture><source srcset="img/top1.webp" type="image/webp"><img src="img/top1.png" alt=""></picture></a></li>
+                        <li data-menuanchor="page5"><a href="#page5"><span>Kubik</span><picture><source srcset="img/top2.webp" type="image/webp"><img src="img/top2.png" alt=""></picture></a></li>
+                        <li data-menuanchor="page7"><a href="#page7"><span>Kubik XS</span><picture><source srcset="img/top3.webp" type="image/webp"><img src="img/top3.png" alt=""></picture></a></li>
+                    </ul>
+                </li>
+                <li><a href="#">O nás</a></li>
+                <li><a href="#">Proč Salt</a></li>
+                <li><a href="#">Proč Kubik</a></li>
+                <li data-menuanchor="page14"><a href="#page14">Kontakty</a></li>
             </ul>
         </div>
+        <div class="header__files">
+            <a href="#">ISO</a>
+            <a href="#">ISO</a>
+        </div>
+        <div class="header__collapse">
+            <span></span>
+        </div>
+
+        <ul class="header__menu-mob">
+            <li class="has-dropdown">
+                <a href="#"><span>Produkty</span><svg><use href="img/icons/icons.svg#chevron-down"></use></svg></a>
+                <ul class="dropdown">
+                    <li><a href="#p2"><span>Salt Cristallite</span><picture><source srcset="img/top1.webp" type="image/webp"><img src="img/top1.png" alt=""></picture></a></li>
+                    <li><a href="#p5"><span>Kubik</span><picture><source srcset="img/top2.webp" type="image/webp"><img src="img/top2.png" alt=""></picture></a></li>
+                    <li><a href="#p7"><span>Kubik XS</span><picture><source srcset="img/top3.webp" type="image/webp"><img src="img/top3.png" alt=""></picture></a></li>
+                </ul>
+            </li>
+            <li><a href="#">O nás</a></li>
+            <li><a href="#">Proč Salt</a></li>
+            <li><a href="#">Proč Kubik</a></li>
+            <li><a href="#p14">Kontakty</a></li>
+        </ul>
     </div>
 </header>
-
-<div id="menu" class="main-nav">
-    <a data-menuanchor="page1" href="#page1">Slide 1</a>
-    <a data-menuanchor="page2" href="#page2">Slide 2</a>
-    <a data-menuanchor="page3" href="#page3">Slide 3</a>
-    <a data-menuanchor="page4" href="#page4">Slide 4</a>
-    <a data-menuanchor="page5" href="#page5">Slide 5</a>
-    <a data-menuanchor="page6" href="#page6">Slide 6</a>
-    <a data-menuanchor="page7" href="#page7">Slide 7</a>
-    <a data-menuanchor="page8" href="#page8">Slide 8</a>
-    <a data-menuanchor="page9" href="#page9">Slide 9</a>
-    <a data-menuanchor="page10" href="#page10">Slide 10</a>
-    <a data-menuanchor="page11" href="#page11">Slide 11</a>
-    <a data-menuanchor="page12" href="#page12">Slide 12</a>
-    <a data-menuanchor="page13" href="#page13">Slide 13</a>
-    <a data-menuanchor="page14" href="#page14">Slide 14</a>
-</div>
-<div id="mob-menu" class="main-nav">
-    <a href="#p1">Slide 1</a>
-    <a href="#p2">Slide 2</a>
-    <a href="#p3">Slide 3</a>
-    <a href="#p4">Slide 4</a>
-    <a href="#p5">Slide 5</a>
-    <a href="#p6">Slide 6</a>
-    <a href="#p7">Slide 7</a>
-    <a href="#p8">Slide 8</a>
-    <a href="#p9">Slide 9</a>
-    <a href="#p10">Slide 10</a>
-    <a href="#p11">Slide 11</a>
-    <a href="#p12">Slide 12</a>
-    <a href="#p13">Slide 13</a>
-    <a href="#p14">Slide 14</a>
-</div>
 
     <main>
         <div id="fullpage">
@@ -86,7 +76,9 @@
         <div class="box"></div>
         <div class="box"></div>
     </div>
-    <img src="img/logo.png" alt="Pro Vape">
+    <picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Pro Vape"></picture>
+
+    <a data-menuanchor="page2" href="#page2"><svg><use href="img/icons/icons.svg#chevron-down"></use></svg></a>
 </section>
             <section class="section" id="p2">
     <div class="container">
@@ -107,27 +99,27 @@
         <span>LESS HARM</span>
         <ul>
             <li data-aos="flip-left" data-aos-delay="300">
-                <img src="img/slide3-icon-1.png" alt="">
+                <picture><source srcset="img/slide3-icon-1.webp" type="image/webp"><img src="img/slide3-icon-1.png" alt=""></picture>
                 <span>Sidlo společnosti<br>v Lotyšsku, EU</span>
             </li>
             <li data-aos="flip-left" data-aos-delay="500">
-                <img src="img/slide3-icon-2.png" alt="">
+                <picture><source srcset="img/slide3-icon-2.webp" type="image/webp"><img src="img/slide3-icon-2.png" alt=""></picture>
                 <span>45+ zaměstnanců<br>ve společnosti Pro Vape Ltd</span>
             </li>
             <li data-aos="flip-left" data-aos-delay="700">
-                <img src="img/slide3-icon-3.png" alt="">
+                <picture><source srcset="img/slide3-icon-3.webp" type="image/webp"><img src="img/slide3-icon-3.png" alt=""></picture>
                 <span>Více než 10 let zkušeností<br>na trhu</span>
             </li>
             <li data-aos="flip-left" data-aos-delay="900">
-                <img src="img/slide3-icon-4.png" alt="">
+                <picture><source srcset="img/slide3-icon-4.webp" type="image/webp"><img src="img/slide3-icon-4.png" alt=""></picture>
                 <span>Online a maloobchodní prodej<br>ve více než 40 zemích<br>v EU i mimo ni</span>
             </li>
             <li data-aos="flip-left" data-aos-delay="1100">
-                <img src="img/slide3-icon-5.png" alt="">
+                <picture><source srcset="img/slide3-icon-5.webp" type="image/webp"><img src="img/slide3-icon-5.png" alt=""></picture>
                 <span>Výrobní závod<br>a distribuční centrum<br>v severní Evropě</span>
             </li>
             <li data-aos="flip-left" data-aos-delay="1300">
-                <img src="img/slide3-icon-6.png" alt="">
+                <picture><source srcset="img/slide3-icon-6.webp" type="image/webp"><img src="img/slide3-icon-6.png" alt=""></picture>
                 <span>Flexibilní obchodní podmínky<br>a skvělé vztahy<br>se zákazníky</span>
             </li>
         </ul>
@@ -145,7 +137,7 @@
 </section>
             <section class="section" id="p5">
     <div class="container">
-        <img data-aos="zoom-out" data-aos-delay="400" src="img/slide5-img.png" alt="">
+        <picture><source srcset="img/slide5-img.webp" type="image/webp"><img data-aos="zoom-out" data-aos-delay="400" src="img/slide5-img.png" alt=""></picture>
     </div>
 </section>
             <section class="section" id="p6">
@@ -154,7 +146,7 @@
             <span>NOVÝ PŘÍCHOD</span>
             <div class="img">
                 <p>NICOTINE <span>2%</span></p>
-                <img src="img/slide6-img.png" alt="">
+                <picture><source srcset="img/slide6-img.webp" type="image/webp"><img src="img/slide6-img.png" alt=""></picture>
             </div>
         </div>
         <div class="right" data-aos="flip-left" data-aos-delay="600">
@@ -232,7 +224,7 @@
             <section class="section" id="p9">
     <div class="container">
         <h2 data-aos="fade-down-right" data-aos-delay="300">SHAPE THE<br>MOMENT</h2>
-        <div data-aos="flip-up" data-aos-delay="600" class="img"><img src="img/slide9-img.png" alt=""></div>
+        <div data-aos="flip-up" data-aos-delay="600" class="img"><picture><source srcset="img/slide9-img.webp" type="image/webp"><img src="img/slide9-img.png" alt=""></picture></div>
         <svg><use href="img/icons/icons.svg#squircle"></use></svg>
     </div>
 </section>
@@ -301,7 +293,7 @@
             </ul>
         </div>
         <div class="right" data-aos="fade-left" data-aos-delay="600">
-            <img src="img/slide12-img.png" alt="">
+            <picture><source srcset="img/slide12-img.webp" type="image/webp"><img src="img/slide12-img.png" alt=""></picture>
 
             <div class="text">
                 <span>až do</span>
@@ -344,15 +336,88 @@
         </ul>
     </div>
 </section>
+            <section class="section" id="p15">
+    <div class="container">
+        <div class="left" data-aos="fade-right" data-aos-delay="300">
+            <h2>KUBIK XS</h2>
+            <h4>Hybridní nebo volná
+                báze dostupný nikotin</h4>
+            <p>Obsah napine 2 ml.<br>
+                E-kapalina s celkovÿm obsahem  nikotinu 36 mg.<br>
+                Obsah nikotinu 1,62 %, na jedno  potahnuti 0,051 mg</p>
+            <ul>
+                <li>
+                    <p>Svazek</p>
+                    <svg><use href="img/icons/icons.svg#slide6-icon-1"></use></svg><span>2 ml</span></li>
+                <li>
+                    <p>Baterie</p>
+                    <svg><use href="img/icons/icons.svg#slide6-icon-2"></use></svg><span>650 mAh</span></li>
+                <li>
+                    <p>Odpor</p>
+                    <svg><use href="img/icons/icons.svg#slide6-icon-3"></use></svg><span>1.0 ahm</span></li>
+                <li>
+                    <p>Napětí</p>
+                    <svg><use href="img/icons/icons.svg#slide6-icon-4"></use></svg><span>3.7 V</span></li>
+                <li>
+                    <p>Hmotnost</p>
+                    <svg><use href="img/icons/icons.svg#slide6-icon-5"></use></svg><span>56g</span></li>
+                <li>
+                    <p>Velikost</p>
+                    <svg><use href="img/icons/icons.svg#slide6-icon-6"></use></svg><span>20 x 20 x 105 mm</span></li>
+            </ul>
+        </div>
+        <div class="right" data-aos="fade-left" data-aos-delay="600">
+            <picture><source srcset="img/slide15-img.webp" type="image/webp"><img src="img/slide15-img.png" alt=""></picture>
+
+            <div class="text">
+                <span>až do</span>
+                <p>750</p>
+                <i>Tahu</i>
+
+                <div>
+                    <span>Tělo:</span>
+
+                    <ul>
+                        <li><span>Pc</span>PC2405<br>polycarbonate</li>
+                        <li><span>Sf</span>Měkké na dotek<br>povrchová úprava</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="section" id="p16">
+    <div class="container">
+        <h2><span>10</span>P Ř Í C H U T Í</h2>
+        <ul>
+            <li data-aos="flip-left" data-aos-delay="100"><i class="n1"></i><span>BLUEBERRY PEACH ICE</span></li>
+            <li data-aos="flip-right" data-aos-delay="200"><i class="n2"></i><span>STRAWBERRY ICE</span></li>
+            <li data-aos="flip-left" data-aos-delay="300"><i class="n3"></i><span>BLUEBERRY RASPBERRY</span></li>
+            <li data-aos="flip-right" data-aos-delay="400"><i class="n4"></i><span>CHERRY ICE</span></li>
+            <li data-aos="flip-left" data-aos-delay="500"><i class="n5"></i><span>FRESH MENTHOL</span></li>
+            <li data-aos="flip-right" data-aos-delay="600"><i class="n6"></i><span>LIME COLA</span></li>
+            <li data-aos="flip-left" data-aos-delay="700"><i class="n7"></i><span>PINEAPPLE BERRY</span></li>
+            <li data-aos="flip-right" data-aos-delay="800"><i class="n8"></i><span>WATERMELON ICE</span></li>
+            <li data-aos="flip-left" data-aos-delay="900"><i class="n9"></i><span>APPLE BLUEBERRY</span></li>
+            <li data-aos="flip-right" data-aos-delay="1000"><i class="n10"></i><span>STRAWBERRY RASPBERRY CHERRY ICE</span></li>
+        </ul>
+    </div>
+</section>
             <section class="section" id="p14">
     <div class="container">
-        <div class="img"><img src="img/image-032.png" alt=""></div>
+        <div class="img"><picture><source srcset="img/image-032.webp" type="image/webp"><img src="img/image-032.png" alt=""></picture></div>
         <div class="footer">
-            <img src="img/img-1.png" alt="">
-            <a href="#" class="link">
-                <img src="img/pdf-white.png" alt="">
-                <span>Stažení licence</span>
-            </a>
+            <picture><source srcset="img/img-1.webp" type="image/webp"><img src="img/img-1.png" alt=""></picture>
+            <div class="links">
+                <a href="#" class="link">
+                    <picture><source srcset="img/pdf-white.webp" type="image/webp"><img src="img/pdf-white.png" alt=""></picture>
+                    <span>Stažení licence</span>
+                </a>
+                <a href="#" class="link">
+                    <picture><source srcset="img/pdf-white.webp" type="image/webp"><img src="img/pdf-white.png" alt=""></picture>
+                    <span>Stažení licence 2</span>
+                </a>
+            </div>
             <ul>
                 <li>Pro Vape Ltd</li>
                 <li>Dambja iela 3b<br>Riga, LV-1005, Lotyšsko</li>
@@ -367,10 +432,10 @@
 
     
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.js" integrity="sha512-JSVRnP8UFs0ieN/cvP9v4vmW1CotIaEKKN7W+4JaKNrllZolTv2aJfVGn4BFdfZ1jRZxgTAAaXWdlZbEm9iwFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/app.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js?_v=20231115211500" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js?_v=20231115211500" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.js?_v=20231115211500" integrity="sha512-JSVRnP8UFs0ieN/cvP9v4vmW1CotIaEKKN7W+4JaKNrllZolTv2aJfVGn4BFdfZ1jRZxgTAAaXWdlZbEm9iwFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/app.min.js?_v=20231115211500"></script>
     <script>
         //
     </script>

@@ -1,53 +1,43 @@
 <header class="header">
     <div class="header__container">
-        <div class="header__collapse">
-            <span></span>
-            <p>menu</p>
-        </div>
-        <div class="header__phone"><span>Kontaktujte nás</span> <svg><use href="@img/icons/icons.svg#phone"></use></svg></div>
-
-        <div class="header__info">
-            <svg><use href="@img/icons/icons.svg#close"></use></svg>
-            <img src="@img/img-1.png" alt="">
-            <ul>
-                <li>Pro Vape Ltd</li>
-                <li>Riga, LV-1005, Lotyšsko</li>
-                <li>Telefon: <a href="tel:+371 26 42 42 43">+371 26 42 42 43</a></li>
-                <li>Email: <a href="mailto:info@pro-vape.eu">info@pro-vape.eu</a></li>
+        <div class="header__logo"><img src="@img/logo.png" alt=""></div>
+        <div class="header__menu">
+            <ul id="menu">
+                <li class="has-dropdown">
+                    <a href="#"><span>Produkty</span><svg><use href="@img/icons/icons.svg#chevron-down"></use></svg></a>
+                    <ul class="dropdown">
+                        <li data-menuanchor="page2"><a href="#page2"><span>Salt Cristallite</span><img src="@img/top1.png" alt=""></a></li>
+                        <li data-menuanchor="page5"><a href="#page5"><span>Kubik</span><img src="@img/top2.png" alt=""></a></li>
+                        <li data-menuanchor="page7"><a href="#page7"><span>Kubik XS</span><img src="@img/top3.png" alt=""></a></li>
+                    </ul>
+                </li>
+                <li><a href="#">O nás</a></li>
+                <li><a href="#">Proč Salt</a></li>
+                <li><a href="#">Proč Kubik</a></li>
+                <li data-menuanchor="page14"><a href="#page14">Kontakty</a></li>
             </ul>
         </div>
+        <div class="header__files">
+            <a href="#">ISO</a>
+            <a href="#">ISO</a>
+        </div>
+        <div class="header__collapse">
+            <span></span>
+        </div>
+
+        <ul class="header__menu-mob">
+            <li class="has-dropdown">
+                <a href="#"><span>Produkty</span><svg><use href="@img/icons/icons.svg#chevron-down"></use></svg></a>
+                <ul class="dropdown">
+                    <li><a href="#p2"><span>Salt Cristallite</span><img src="@img/top1.png" alt=""></a></li>
+                    <li><a href="#p5"><span>Kubik</span><img src="@img/top2.png" alt=""></a></li>
+                    <li><a href="#p7"><span>Kubik XS</span><img src="@img/top3.png" alt=""></a></li>
+                </ul>
+            </li>
+            <li><a href="#">O nás</a></li>
+            <li><a href="#">Proč Salt</a></li>
+            <li><a href="#">Proč Kubik</a></li>
+            <li><a href="#p14">Kontakty</a></li>
+        </ul>
     </div>
 </header>
-
-<div id="menu" class="main-nav">
-    <a data-menuanchor="page1" href="#page1">Slide 1</a>
-    <a data-menuanchor="page2" href="#page2">Slide 2</a>
-    <a data-menuanchor="page3" href="#page3">Slide 3</a>
-    <a data-menuanchor="page4" href="#page4">Slide 4</a>
-    <a data-menuanchor="page5" href="#page5">Slide 5</a>
-    <a data-menuanchor="page6" href="#page6">Slide 6</a>
-    <a data-menuanchor="page7" href="#page7">Slide 7</a>
-    <a data-menuanchor="page8" href="#page8">Slide 8</a>
-    <a data-menuanchor="page9" href="#page9">Slide 9</a>
-    <a data-menuanchor="page10" href="#page10">Slide 10</a>
-    <a data-menuanchor="page11" href="#page11">Slide 11</a>
-    <a data-menuanchor="page12" href="#page12">Slide 12</a>
-    <a data-menuanchor="page13" href="#page13">Slide 13</a>
-    <a data-menuanchor="page14" href="#page14">Slide 14</a>
-</div>
-<div id="mob-menu" class="main-nav">
-    <a href="#p1">Slide 1</a>
-    <a href="#p2">Slide 2</a>
-    <a href="#p3">Slide 3</a>
-    <a href="#p4">Slide 4</a>
-    <a href="#p5">Slide 5</a>
-    <a href="#p6">Slide 6</a>
-    <a href="#p7">Slide 7</a>
-    <a href="#p8">Slide 8</a>
-    <a href="#p9">Slide 9</a>
-    <a href="#p10">Slide 10</a>
-    <a href="#p11">Slide 11</a>
-    <a href="#p12">Slide 12</a>
-    <a href="#p13">Slide 13</a>
-    <a href="#p14">Slide 14</a>
-</div>
