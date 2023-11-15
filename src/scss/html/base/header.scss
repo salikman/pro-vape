@@ -33,6 +33,7 @@ body.open-menu {
 
   &.open-info {
     .header__info {
+      transform: translate(-50%,0);
       z-index: 91;
       opacity: 1;
       visibility: visible;
@@ -129,7 +130,7 @@ body.open-menu {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%,100%);
     opacity: 0;
     visibility: hidden;
     transition: all .3s ease;

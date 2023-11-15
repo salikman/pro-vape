@@ -454,7 +454,7 @@ section {
       }
     }
     p {
-      margin-bottom: 120px;
+      margin-bottom: 7run0px;
       color: #FFF;
       font-family: 'FuturaBookC', sans-serif;
       font-size: 21px;
@@ -464,7 +464,6 @@ section {
       letter-spacing: 0.84px;
 
       @media (max-width: 991px) {
-        margin-bottom: 50px;
         font-size: 18px;
         text-align: center;
       }
@@ -473,7 +472,7 @@ section {
     & > ul {
       display: grid;
       grid-template-columns: repeat(3, auto);
-      gap: 50px;
+      gap: 30px;
       margin-bottom: 50px;
 
       @media (max-width: 767px) {
@@ -971,7 +970,6 @@ section {
     }
 
     h2 {
-      margin-bottom: 30px;
       color: #FFF;
       font-size: 78px;
       font-style: normal;
@@ -1003,7 +1001,7 @@ section {
     }
 
     & > p {
-      margin-bottom: 100px;
+      margin-bottom: 70px;
       color: #FFF;
       font-size: 25px;
       font-style: normal;

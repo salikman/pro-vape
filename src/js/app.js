@@ -3,7 +3,6 @@ import * as lazyLoad from "./modules/lazyload.js";
 
 flsFunctions.isWebp();
 lazyLoad.lazyLoad();
-AOS.init();
 
 $('.header__phone').on('click', function() {
     $('.header').toggleClass('open-info');
@@ -29,34 +28,42 @@ $(".main-nav a[href^='#']").on('click', function(e) {
     }, 600);
 });
 
-document.addEventListener('wheel', function(event) {
-    event.preventDefault();
-    var delta = event.deltaY; // отримання напрямку прокрутки
-    var $sections = document.querySelectorAll('[id]'); // знаходження всіх елементів з id
-    var currentScrollPosition = window.pageYOffset;
+// $('#fullpage').fullpage({
+//     // autoScrolling:true,
+//     // scrollHorizontally: true,
+//     responsiveWidth: 991
+// });
 
-    var $nearestSection = null;
-    var nearestDistance = Number.MAX_SAFE_INTEGER;
+if (window.innerWidth > 991) {
+    document.addEventListener('wheel', function(event) {
+        event.preventDefault();
+        var delta = event.deltaY; // отримання напрямку прокрутки
+        var $sections = document.querySelectorAll('[id]'); // знаходження всіх елементів з id
+        var currentScrollPosition = window.pageYOffset;
 
-    $sections.forEach(function(section) {
-        var sectionOffset = section.offsetTop;
-        var distance = Math.abs(sectionOffset - currentScrollPosition);
+        var $nearestSection = null;
+        var nearestDistance = Number.MAX_SAFE_INTEGER;
 
-        if ((delta < 0 && sectionOffset < currentScrollPosition) || (delta > 0 && sectionOffset > currentScrollPosition)) {
-            if (distance < nearestDistance) {
-                nearestDistance = distance;
-                $nearestSection = section;
+        $sections.forEach(function(section) {
+            var sectionOffset = section.offsetTop;
+            var distance = Math.abs(sectionOffset - currentScrollPosition);
+
+            if ((delta < 0 && sectionOffset < currentScrollPosition) || (delta > 0 && sectionOffset > currentScrollPosition)) {
+                if (distance < nearestDistance) {
+                    nearestDistance = distance;
+                    $nearestSection = section;
+                }
             }
-        }
-    });
-
-    if ($nearestSection !== null) {
-        window.scrollTo({
-            top: $nearestSection.offsetTop,
-            behavior: 'smooth'
         });
-    }
-}, { passive: false });
+
+        if ($nearestSection !== null) {
+            window.scrollTo({
+                top: $nearestSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }, { passive: false });
+}
 
 
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -94,6 +101,3 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     repositionBoxes();
 });
-
-
-
